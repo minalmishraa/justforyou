@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For You 🌷</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Bloom Loading Screen -->
+  <div id="loading-screen">
+    <div class="bloom-container">
+      <div class="tulip">
+        <div class="petal p1"></div>
+        <div class="petal p2"></div>
+        <div class="petal p3"></div>
+        <div class="petal p4"></div>
+        <div class="stem"></div>
+        <div class="leaf l1"></div>
+        <div class="leaf l2"></div>
+      </div>
+      <p class="loading-text">Something special is blooming for you... 🌷</p>
+    </div>
+  </div>
+
+  <!-- Cursor glow -->
+  <div id="cursor-glow"></div>
+
+  <!-- Floating petals container -->
+  <div id="petals-container"></div>
+
+  <!-- Floating hearts container -->
+  <div id="hearts-container"></div>
+
+  <!-- Sparkles container -->
+  <div id="sparkles-container"></div>
+
+  <!-- PAGES -->
+  <div id="app">
+
+    <!-- Page 1: Proposal -->
+    <div class="page active" id="page-proposal">
+      <div class="glass-card float-anim">
+        <img src="images/cat-flowers.jpg" alt="cat with flowers" class="page-img zoom-hover" id="img-proposal" />
+        <h1 class="typewriter" id="text-proposal">Heyy Sweetie ❤️</h1>
+        <p class="subtitle">I like you.</p>
+        <p class="subtitle">Will you be mine? 🌹</p>
+        <div class="btn-group">
+          <button class="btn btn-yes glow-btn" id="btn-yes-proposal" onclick="goToLove()">💖 Yess Babe</button>
+          <button class="btn btn-no" id="btn-no-proposal" onclick="handleNoProposal()">🙈 No, Not a Chance</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Page 2: No Way Back -->
+    <div class="page" id="page-noback">
+      <div class="glass-card float-anim">
+        <img src="images/no-way-back.jpg" alt="no way back cat" class="page-img zoom-hover" />
+        <h1 class="typewriter">😾 No way back dear!</h1>
+        <p class="subtitle">There's only one option... 💕</p>
+        <div class="btn-group">
+          <button class="btn btn-yes glow-btn" onclick="goToLove()">💖 Yess Babe</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Page 3: Love -->
+    <div class="page" id="page-love">
+      <div class="glass-card float-anim">
+        <img src="images/cat-bouquets.jpg" alt="cat with bouquets" class="page-img zoom-hover" />
+        <h1 class="typewriter">🌷</h1>
+        <p class="subtitle big-sub">I'll do anything for you my queen ❤️</p>
+        <p class="subtitle">Just be mine.</p>
+        <div class="btn-group">
+          <button class="btn btn-yes glow-btn" onclick="goToFood()">Continue 🌸</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Page 4: Food -->
+    <div class="page" id="page-food">
+      <div class="glass-card float-anim">
+        <img src="images/cat-food.jpg" alt="cat with food" class="page-img zoom-hover" />
+        <h1 class="typewriter">🥟</h1>
+        <p class="subtitle big-sub">I'll feed you forever my queen ❤️</p>
+        <div class="btn-group">
+          <button class="btn btn-yes glow-btn" onclick="goToMarriage()">Continue 💕</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Page 5: Marriage -->
+    <div class="page" id="page-marriage">
+      <div class="glass-card float-anim">
+        <img src="images/ring-cat.jpg" alt="ring cat" class="page-img zoom-hover" />
+        <h1 class="typewriter">💍</h1>
+        <p class="subtitle big-sub">Will you marry me sweetheart?? ❤️</p>
+        <div class="btn-group">
+          <button class="btn btn-yes glow-btn" id="btn-yes-marry" onclick="goToFinal()">💖 Yes My Love</button>
+          <button class="btn btn-no" id="btn-no-marry" onclick="handleNoMarriage()">🙈 No</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Page 6: Not an Option -->
+    <div class="page" id="page-notoption">
+      <div class="glass-card float-anim">
+        <img src="images/ring-cat.jpg" alt="ring cat" class="page-img zoom-hover" />
+        <h1 class="typewriter">😘 Not an option dear ❤️</h1>
+        <p class="subtitle">You know the answer already... 💍</p>
+        <div class="btn-group">
+          <button class="btn btn-yes glow-btn" onclick="goToFinal()">💖 Yes My Love</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Page 7: Final -->
+    <div class="page" id="page-final">
+      <div class="final-bg"></div>
+      <div class="glass-card float-anim final-card">
+        <img src="images/final-couple.jpg" alt="lovers" class="page-img final-img zoom-hover" />
+        <h1 class="typewriter final-title" id="final-title">❤️ You are mine dear.</h1>
+        <p class="subtitle final-sub" id="final-sub"></p>
+        <div id="final-hearts-burst"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Audio elements -->
+  <audio id="audio-start" src="music/start.mp3" loop preload="auto"></audio>
+  <audio id="audio-final" src="music/final.mp3" preload="auto"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
